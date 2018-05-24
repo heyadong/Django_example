@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'DTL_demo'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'app_django.urls'
-
+# 模板配置DIRS为模板文件夹
+#APP_DIRS 会默认从dir中查找
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

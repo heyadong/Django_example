@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+这是DTL_demo下的的index.html
+<table>
+<thead>
+<tr>
+    <td>序号</td>
+<td>书名</td>
+<td>作者</td>
+<td>价格</td>
+</tr>
+</thead>
+<tbody>
+{% for book in books %}
+    {% if forloop.first %}
+    <tr style="color: red">
+    {% elif forloop.last %}
+    <tr style="color: deeppink">
+    {% else %}
+    <tr>
+    {% endif %}
+    <td>{{forloop.counter}}</td>
+    <td>
+        {{book.name}}
+    </td>
+    <td>
+        {{book.author}}
+    </td>
+    <td>
+        {{book.price}}
+    </td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>

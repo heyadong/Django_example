@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.http import HttpResponse
-
+from DTL_demo import views
 
 def index(request):
     return HttpResponse('hello world')
@@ -26,7 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
     path('book/',include('helloworld.urls')),
-    path('repath/', include('re_path_demo.urls'))
+    path('repath/', include('re_path_demo.urls')),
+    path('article/',include('path_converter_demo.urls')),
+    path('dtl/',views.template)
     # path('book/',views.book),
     # path('book/<int:id>',views.book_detail)
 ]
